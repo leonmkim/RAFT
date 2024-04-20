@@ -1,7 +1,9 @@
 import torch
 import torch.nn.functional as F
-from utils.utils import bilinear_sampler, coords_grid
-
+try:
+    from utils.utils import bilinear_sampler, coords_grid
+except:
+    from core.utils.utils import bilinear_sampler, coords_grid
 try:
     import alt_cuda_corr
 except:

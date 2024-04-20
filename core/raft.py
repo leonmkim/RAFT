@@ -6,8 +6,10 @@ import torch.nn.functional as F
 from update import BasicUpdateBlock, SmallUpdateBlock
 from extractor import BasicEncoder, SmallEncoder
 from corr import CorrBlock, AlternateCorrBlock
-from utils.utils import bilinear_sampler, coords_grid, upflow8
-
+try:
+    from utils.utils import bilinear_sampler, coords_grid, upflow8
+except:
+    from core.utils.utils import bilinear_sampler, coords_grid, upflow8
 try:
     autocast = torch.cuda.amp.autocast
 except:
